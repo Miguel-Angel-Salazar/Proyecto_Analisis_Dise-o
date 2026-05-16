@@ -41,3 +41,17 @@
 # h = numero de horarios
 
 
+# Complejidad espacial:
+#
+# El algoritmo almacena una lista de asignaciones:
+#
+# asignaciones = []
+#
+# En el peor caso:
+#
+# len(asignaciones) = m
+#
+# por lo tanto:
+#
+# O(m)
+#
