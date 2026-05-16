@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/27830625/README.md)
 # Planificador de Horarios Universitarios
 
 Proyecto de analisis y diseno de algoritmos para asignar materias a salones y horarios de manera optima, utilizando fuerza bruta, recursividad, greedy, backtracking y divide y venceras.
