@@ -35,7 +35,7 @@
 #
 #
 # donde:
-#
+
 # m = numero de materias
 # s = numero de salones
 # h = numero de horarios
