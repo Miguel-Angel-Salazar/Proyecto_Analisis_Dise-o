@@ -79,7 +79,8 @@ planificador-horarios-universidad/
 |   |___ algoritmo_greedy.py           
 |   |___ algoritmo_backtracking.py     
 |   |___ algoritmo_divide_venceras.py  
-|   |___ comparativa.py              # Comparativa de todos los algoritmos
+|   |___ comparativa.py            # Comparativa de todos los algoritmos
+|   |___ lector_datos.py            
 |
 |___ 3-Docs/                        # Documentacion
 |   |___ entrega1.pdf
