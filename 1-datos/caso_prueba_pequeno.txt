@@ -1,0 +1,30 @@
+# CASO PEQUENO: 3 materias, 2 salones, 2 profesores, 2 grupos
+# Formato: MATERIA | PROFESOR | GRUPO | ALUMNOS | HORAS_REQUERIDAS | PREFERENCIA_HORARIO
+#          SALON | CAPACIDAD
+#          HORARIO_DISPONIBLE (dia hora_inicio hora_fin)
+#          RESTRICCION_PROFESOR (profesor dia hora_inicio hora_fin)
+#          PREFERENCIA_PROFESOR (profesor dia hora_inicio hora_fin prioridad)
+
+MATERIAS
+Matematicas_Discretas|Prof_A|Grupo_1|25|2|Lunes 7:00 11:00
+Programacion_I|Prof_B|Grupo_2|20|3|Martes 9:00 13:00
+Base_de_Datos|Prof_A|Grupo_1|30|2|Lunes 11:00 13:00
+
+SALONES
+Salon_101|30
+Salon_102|25
+
+HORARIOS_DISPONIBLES
+Lunes 7:00 9:00
+Lunes 9:00 11:00
+Lunes 11:00 13:00
+Martes 7:00 9:00
+Martes 9:00 11:00
+Martes 11:00 13:00
+
+RESTRICCIONES_PROFESORES
+Prof_A Martes 7:00 13:00
+
+PREFERENCIAS_PROFESORES
+Prof_A Lunes 7:00 9:00 alta
+Prof_B Martes 9:00 11:00 media

@@ -1,0 +1,65 @@
+# CASO GRANDE: 15 materias, 6 salones, 8 profesores, 6 grupos
+
+MATERIAS
+Matematicas_Discretas|Prof_A|Grupo_1|25|2|Lunes 7:00 11:00
+Programacion_I|Prof_B|Grupo_2|20|3|Martes 9:00 13:00
+Base_de_Datos|Prof_C|Grupo_1|30|2|Miercoles 7:00 11:00
+Algoritmos|Prof_A|Grupo_3|28|3|Jueves 9:00 13:00
+Redes|Prof_D|Grupo_2|22|2|Viernes 7:00 11:00
+Sistemas_Operativos|Prof_E|Grupo_4|35|3|Lunes 11:00 15:00
+Inteligencia_Artificial|Prof_B|Grupo_3|18|2|Martes 7:00 11:00
+Seguridad_Informatica|Prof_D|Grupo_4|24|3|Miercoles 9:00 13:00
+Compiladores|Prof_F|Grupo_5|15|3|Jueves 7:00 11:00
+Graficos_por_Computadora|Prof_G|Grupo_5|20|2|Viernes 9:00 13:00
+Ingenieria_de_Software|Prof_H|Grupo_6|32|2|Lunes 7:00 11:00
+Machine_Learning|Prof_B|Grupo_6|16|3|Martes 11:00 15:00
+Cloud_Computing|Prof_E|Grupo_6|28|2|Miercoles 11:00 15:00
+Programacion_Web|Prof_G|Grupo_5|22|3|Jueves 11:00 15:00
+Blockchain|Prof_F|Grupo_4|12|2|Viernes 11:00 15:00
+
+SALONES
+Salon_101|40
+Salon_102|35
+Salon_201|30
+Salon_202|25
+Laboratorio_A|20
+Laboratorio_B|15
+
+HORARIOS_DISPONIBLES
+Lunes 7:00 9:00
+Lunes 9:00 11:00
+Lunes 11:00 13:00
+Lunes 14:00 16:00
+Lunes 16:00 18:00
+Martes 7:00 9:00
+Martes 9:00 11:00
+Martes 11:00 13:00
+Martes 14:00 16:00
+Martes 16:00 18:00
+Miercoles 7:00 9:00
+Miercoles 9:00 11:00
+Miercoles 11:00 13:00
+Miercoles 14:00 16:00
+Jueves 7:00 9:00
+Jueves 9:00 11:00
+Jueves 11:00 13:00
+Viernes 7:00 9:00
+Viernes 9:00 11:00
+Viernes 11:00 13:00
+
+RESTRICCIONES_PROFESORES
+Prof_A Martes 16:00 18:00
+Prof_B Lunes 16:00 18:00
+Prof_C Miercoles 16:00 18:00
+Prof_D Jueves 14:00 16:00
+Prof_E Viernes 16:00 18:00
+
+PREFERENCIAS_PROFESORES
+Prof_A Lunes 7:00 9:00 alta
+Prof_B Martes 9:00 11:00 alta
+Prof_C Miercoles 7:00 9:00 media
+Prof_D Jueves 9:00 11:00 baja
+Prof_E Lunes 11:00 13:00 alta
+Prof_F Jueves 7:00 9:00 media
+Prof_G Viernes 9:00 11:00 alta
+Prof_H Lunes 7:00 9:00 alta
