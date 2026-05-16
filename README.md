@@ -70,8 +70,6 @@ planificador-horarios-universidad/
 |   |___ 1-caso_pequeno.txt            # 3 materias, 2 salones, 2 grupos
 |   |___ 2-caso_mediano.txt            # 8 materias, 4 salones, 4 grupos
 |   |___ 3-caso_grande.txt             # 15 materias, 6 salones, 6 grupos
-|   |___ 4-caso_100.txt                # Template para 100 materias
-|   |___ 5-caso_1000.txt               # Template para 1000 materias
 |
 |___ 2-Src/                         # Codigo fuente
 |   |___ algoritmo_fuerza_bruta.py    
