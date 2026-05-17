@@ -25,7 +25,6 @@ def resolver_recursivo(
     asignaciones
 ):
 
-    # caso base
     if indice >= len(materias):
         return
 
@@ -57,7 +56,6 @@ def resolver_recursivo(
 
                     asignaciones.append(nueva)
 
-                    # llamada recursiva
                     resolver_recursivo(
                         materias,
                         salones,
@@ -69,41 +67,46 @@ def resolver_recursivo(
                     return
 
 
-casos = [
-    "caso_prueba_pequeno.txt",
-    "caso_prueba_mediano.txt",
-    "caso_prueba_grande.txt"
-]
+# ==========================================
+# PRUEBAS
+# ==========================================
 
+if __name__ == "__main__":
 
-for caso in casos:
+    casos = [
+        "caso_prueba_pequeno.txt",
+        "caso_prueba_mediano.txt",
+        "caso_prueba_grande.txt"
+    ]
 
-    print("\n===================================")
-    print("CASO:", caso)
-    print("===================================\n")
+    for caso in casos:
 
-    materias, salones, horarios, restricciones, preferencias = cargar_datos(
-        caso
-    )
+        print("\n===================================")
+        print("CASO:", caso)
+        print("===================================\n")
 
-    asignaciones = []
+        materias, salones, horarios, restricciones, preferencias = cargar_datos(
+            caso
+        )
 
-    resolver_recursivo(
-        materias,
-        salones,
-        horarios,
-        0,
-        asignaciones
-    )
+        asignaciones = []
 
-    print("HORARIO GENERADO\n")
+        resolver_recursivo(
+            materias,
+            salones,
+            horarios,
+            0,
+            asignaciones
+        )
 
-    for r in asignaciones:
+        print("HORARIO GENERADO\n")
 
-        print("Materia:", r["materia"])
-        print("Profesor:", r["profesor"])
-        print("Grupo:", r["grupo"])
-        print("Salon:", r["salon"])
-        print("Horario:", r["horario"])
+        for r in asignaciones:
 
-        print("-----------------------")
+            print("Materia:", r["materia"])
+            print("Profesor:", r["profesor"])
+            print("Grupo:", r["grupo"])
+            print("Salon:", r["salon"])
+            print("Horario:", r["horario"])
+
+            print("-----------------------")

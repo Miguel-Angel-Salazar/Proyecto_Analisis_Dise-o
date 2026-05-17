@@ -64,36 +64,42 @@ def fuerza_bruta(materias, salones, horarios):
     return asignaciones
 
 
-casos = [
-    "caso_prueba_pequeno.txt",
-    "caso_prueba_mediano.txt",
-    "caso_prueba_grande.txt",
+# ==========================================
+# PRUEBAS
+# ==========================================
+
+if __name__ == "__main__":
+
+    casos = [
+        "caso_prueba_pequeno.txt",
+        "caso_prueba_mediano.txt",
+        "caso_prueba_grande.txt",
     ]
 
-for caso in casos:
+    for caso in casos:
 
-    print("\n===================================")
-    print("CASO:", caso)
-    print("===================================\n")
+        print("\n===================================")
+        print("CASO:", caso)
+        print("===================================\n")
 
-    materias, salones, horarios, restricciones, preferencias = cargar_datos(
-        caso
-    )
+        materias, salones, horarios, restricciones, preferencias = cargar_datos(
+            caso
+        )
 
-    resultado = fuerza_bruta(
-        materias,
-        salones,
-        horarios
-    )
+        resultado = fuerza_bruta(
+            materias,
+            salones,
+            horarios
+        )
 
-    print("HORARIO GENERADO\n")
+        print("HORARIO GENERADO\n")
 
-    for r in resultado:
+        for r in resultado:
 
-        print("Materia:", r["materia"])
-        print("Profesor:", r["profesor"])
-        print("Grupo:", r["grupo"])
-        print("Salon:", r["salon"])
-        print("Horario:", r["horario"])
+            print("Materia:", r["materia"])
+            print("Profesor:", r["profesor"])
+            print("Grupo:", r["grupo"])
+            print("Salon:", r["salon"])
+            print("Horario:", r["horario"])
 
-        print("-----------------------")
+            print("-----------------------")
