@@ -79,13 +79,25 @@ planificador-horarios-universidad/
 |   |___ algoritmo_divide_venceras.py  
 |   |___ comparativa.py            # Comparativa de todos los algoritmos
 |   |___ lector_datos.py            
-|
+|   │
+│   └── Comparativas/
+│       │
+│       ├── comparativa_entrega1.py
+│       ├── comparativa_entrega2.py
+│       ├── comparativa_final.py
+│       │
+│       └── generar_graficas.py
 |___ 3-Docs/                        # Documentacion
 |   |___ entrega1.pdf
 |   |___ entrega2.pdf
-|   |___ entrega3_final.pdf                
+|   |___ entrega3_final.pdf
+|             
+├── 4-Graficas/
+│   |___ fuerza_bruta_vs_recursivo.png
+│   |___ greedy_vs_backtracking.png
+│   |___ comparativa_general.png
 |
-|___ 4-Presentacion/                # Presentacion final
+|___ 5-Presentacion/                # Presentacion final
 |   |___ presentacion_final.pdf        # Diapositivas (placeholder)
 |
 |___ .gitignore
