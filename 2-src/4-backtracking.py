@@ -17,3 +17,7 @@ def hay_conflicto(asignaciones, profesor, grupo, salon, horario):
 
     return False
 
+def backtracking(materias, salones, horarios, indice, asignaciones):
+
+    if indice >= len(materias):
+        return True
