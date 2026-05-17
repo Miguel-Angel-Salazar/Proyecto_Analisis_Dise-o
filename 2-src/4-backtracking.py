@@ -21,3 +21,45 @@ def backtracking(materias, salones, horarios, indice, asignaciones):
 
     if indice >= len(materias):
         return True
+
+     materia = materias[indice]
+
+    for salon in salones:
+
+        if salon["capacidad"] >= materia["alumnos"]:
+
+            for horario in horarios:
+
+                conflicto = hay_conflicto(
+                    asignaciones, materia["profesor"],
+                    materia["grupo"], salon["nombre"],
+                    horario
+                )
+
+                if conflicto == False:
+
+                    nueva = {
+                        "materia": materia["nombre"],
+                        "profesor": materia["profesor"],
+                        "grupo": materia["grupo"],
+                        "salon": salon["nombre"],
+                        "horario": horario
+                    }
+
+                    asignaciones.append(nueva)
+
+                    
+                    resultado = backtracking(
+                        materias, salones,
+                        horarios, indice + 1,
+                        asignaciones
+                    )
+
+                    
+                    if resultado:
+                        return True
+
+                    # retroceder
+                    asignaciones.pop()
+
+    return False
