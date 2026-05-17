@@ -63,3 +63,39 @@ def backtracking(materias, salones, horarios, indice, asignaciones):
                     asignaciones.pop()
 
     return False
+
+if _name_ == "_main_":
+
+    casos = [
+        "caso_prueba_pequeno.txt",
+        "caso_prueba_mediano.txt",
+        "caso_prueba_grande.txt"
+    ]
+
+    for caso in casos:
+
+        print("\n===================================")
+        print("CASO:", caso)
+        print("===================================\n")
+
+        materias, salones, horarios, restricciones, preferencias = cargar_datos(caso)
+
+        asignaciones = []
+
+        backtracking(
+            materias, salones,
+            horarios, 0,
+            asignaciones
+        )
+
+        print("HORARIO GENERADO\n")
+
+        for r in asignaciones:
+
+            print("Materia:", r["materia"])
+            print("Profesor:", r["profesor"])
+            print("Grupo:", r["grupo"])
+            print("Salon:", r["salon"])
+            print("Horario:", r["horario"])
+
+            print("-----------------------")
