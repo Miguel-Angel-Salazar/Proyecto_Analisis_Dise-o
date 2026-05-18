@@ -16,19 +16,18 @@ from backtracking import backtracking
 
 
 casos = [
-    ("caso_prueba_pequeno.txt", 3),
-    ("caso_prueba_mediano.txt", 8),
-    ("caso_prueba_grande.txt", 15)
+    ("caso_prueba_pequeno.txt", 3, "Pequeno"),
+    ("caso_prueba_mediano.txt", 8, "Mediano"),
+    ("caso_prueba_grande.txt", 15, "Grande")
 ]
 
 
-print("\n====================================")
-print("COMPARATIVA ENTREGA 2")
-print("====================================")
+print("=" * 75)
+print("RESULTADOS ENTREGA 2 - GREEDY VS BACKTRACKING")
+print("=" * 75)
 
-for caso, cantidad in casos:
 
-    print("\nCaso:", caso)
+for caso, cantidad, nombre_caso in casos:
 
     materias, salones, horarios, restricciones, preferencias = cargar_datos(
         caso
@@ -48,9 +47,9 @@ for caso, cantidad in casos:
 
     fin = time.time()
 
-    tiempo_greedy = fin - inicio
+    tiempo_greedy = (fin - inicio) * 1000  # ms
 
-     # =====================================
+    # =====================================
     # BACKTRACKING
     # =====================================
 
@@ -68,20 +67,24 @@ for caso, cantidad in casos:
 
     fin = time.time()
 
-    tiempo_backtracking = fin - inicio
+    tiempo_backtracking = (fin - inicio) * 1000  # ms
 
     # =====================================
     # RESULTADOS
     # =====================================
 
-    print("\nCantidad de materias:", cantidad)
+    print(f"\nCASO: {nombre_caso}")
 
-    print("\nGREEDY")
-    print("Tiempo:", tiempo_greedy)
-    print("Asignaciones:", len(resultado_greedy))
+    print(f"   Materias totales: {cantidad}")
 
-    print("\nBACKTRACKING")
-    print("Tiempo:", tiempo_backtracking)
-    print("Asignaciones:", len(asignaciones_backtracking))
+    print(
+        f"   Greedy:          "
+        f"{len(resultado_greedy)} asignadas en "
+        f"{tiempo_greedy:.4f} ms"
+    )
 
-    print("\n------------------------------------")
+    print(
+        f"   Backtracking:    "
+        f"{len(asignaciones_backtracking)} asignadas en "
+        f"{tiempo_backtracking:.4f} ms"
+    )
