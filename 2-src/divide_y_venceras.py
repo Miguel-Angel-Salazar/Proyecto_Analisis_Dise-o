@@ -111,3 +111,44 @@ def divide_y_venceras(materias, salones, horarios):
     return resultado
 
 
+# =====================================
+# PRUEBAS
+# =====================================
+
+if __name__ == "__main__":
+
+    casos = [
+        "caso_prueba_pequeno.txt",
+        "caso_prueba_mediano.txt",
+        "caso_prueba_grande.txt"
+    ]
+
+    for caso in casos:
+
+        print("\n===================================")
+        print("CASO:", caso)
+        print("===================================\n")
+
+        materias, salones, horarios, restricciones, preferencias = cargar_datos(
+            caso
+        )
+
+        resultado = divide_y_venceras(
+            materias,
+            salones,
+            horarios
+        )
+
+        print("HORARIO GENERADO\n")
+
+        for r in resultado:
+
+            print("Materia:", r["materia"])
+            print("Profesor:", r["profesor"])
+            print("Grupo:", r["grupo"])
+            print("Salon:", r["salon"])
+            print("Horario:", r["horario"])
+
+            print("-----------------------")
+            
+        
