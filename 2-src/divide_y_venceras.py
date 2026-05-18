@@ -92,21 +92,7 @@ def divide_y_venceras(materias, salones, horarios):
     )
 
     # combinar
-    resultado = solucion_izquierda.copy()
-
-    for materia in solucion_derecha:
-
-        conflicto = hay_conflicto(
-            resultado,
-            materia["profesor"],
-            materia["grupo"],
-            materia["salon"],
-            materia["horario"]
-        )
-
-        if conflicto == False:
-
-            resultado.append(materia)
+    resultado = solucion_izquierda + solucion_derecha
 
     return resultado
 
@@ -150,5 +136,3 @@ if __name__ == "__main__":
             print("Horario:", r["horario"])
 
             print("-----------------------")
-            
-        
