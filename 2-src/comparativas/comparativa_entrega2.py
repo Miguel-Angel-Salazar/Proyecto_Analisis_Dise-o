@@ -2,10 +2,10 @@ import time
 import sys
 import os
 
-# permitir importar archivos desde 2-src
+
 sys.path.append(
     os.path.abspath(
-        os.path.join(os.path.dirname(_file_), "..")
+        os.path.join(os.path.dirname(__file__), "..")
     )
 )
 
@@ -25,3 +25,63 @@ casos = [
 print("\n====================================")
 print("COMPARATIVA ENTREGA 2")
 print("====================================")
+
+for caso, cantidad in casos:
+
+    print("\nCaso:", caso)
+
+    materias, salones, horarios, restricciones, preferencias = cargar_datos(
+        caso
+    )
+
+    # =====================================
+    # GREEDY
+    # =====================================
+
+    inicio = time.time()
+
+    resultado_greedy = greedy(
+        materias,
+        salones,
+        horarios
+    )
+
+    fin = time.time()
+
+    tiempo_greedy = fin - inicio
+
+     # =====================================
+    # BACKTRACKING
+    # =====================================
+
+    asignaciones_backtracking = []
+
+    inicio = time.time()
+
+    backtracking(
+        materias,
+        salones,
+        horarios,
+        0,
+        asignaciones_backtracking
+    )
+
+    fin = time.time()
+
+    tiempo_backtracking = fin - inicio
+
+    # =====================================
+    # RESULTADOS
+    # =====================================
+
+    print("\nCantidad de materias:", cantidad)
+
+    print("\nGREEDY")
+    print("Tiempo:", tiempo_greedy)
+    print("Asignaciones:", len(resultado_greedy))
+
+    print("\nBACKTRACKING")
+    print("Tiempo:", tiempo_backtracking)
+    print("Asignaciones:", len(asignaciones_backtracking))
+
+    print("\n------------------------------------")
