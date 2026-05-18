@@ -1,27 +1,38 @@
+import json
 import matplotlib.pyplot as plt
 
 
-# tamaños de entrada
-materias = [3, 8, 15]
+# =========================================
+# LEER RESULTADOS ENTREGA 1
+# =========================================
 
-# tiempos fuerza bruta
-tiempos_fuerza_bruta = [
-    7.3909759521484375e-06,
-    2.09808349609375e-05,
-    0.0002028942108154297
-]
+with open(
+    "2-src/comparativas/resultados_entrega1.json",
+    "r"
+) as archivo:
 
-# tiempos recursivo
-tiempos_recursivo = [
-    5.4836273193359375e-06,
-    1.71661376953125e-05,
-    0.0001533031463623047
-]
+    datos_entrega1 = json.load(archivo)
+
+
+materias = []
+tiempos_fuerza_bruta = []
+tiempos_recursivo = []
+
+
+for dato in datos_entrega1:
+
+    materias.append(dato["materias"])
+
+    tiempos_fuerza_bruta.append(dato["fuerza_bruta"])
+
+    tiempos_recursivo.append(dato["recursivo"])
 
 
 # =========================================
-# GRAFICA COMPARATIVA
+# GRAFICA FUERZA BRUTA VS RECURSIVO
 # =========================================
+
+plt.figure()
 
 plt.plot(
     materias,
@@ -38,7 +49,7 @@ plt.plot(
 )
 
 plt.xlabel("Cantidad de materias")
-plt.ylabel("Tiempo de ejecucion (segundos)")
+plt.ylabel("Tiempo de ejecucion (ms)")
 
 plt.title("Comparativa Fuerza Bruta vs Recursivo")
 
@@ -46,10 +57,8 @@ plt.legend()
 
 plt.grid(True)
 
-# guardar imagen
 plt.savefig(
     "4-graficas/fuerza_bruta_vs_recursivo.png"
 )
 
-# mostrar grafica
 plt.show()

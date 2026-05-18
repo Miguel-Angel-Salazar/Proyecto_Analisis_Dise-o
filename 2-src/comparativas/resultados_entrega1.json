@@ -1,0 +1,20 @@
+[
+    {
+        "caso": "Pequeno",
+        "materias": 3,
+        "fuerza_bruta": 0.007152557373046875,
+        "recursivo": 0.0059604644775390625
+    },
+    {
+        "caso": "Mediano",
+        "materias": 8,
+        "fuerza_bruta": 0.019550323486328125,
+        "recursivo": 0.018596649169921875
+    },
+    {
+        "caso": "Grande",
+        "materias": 15,
+        "fuerza_bruta": 0.07843971252441406,
+        "recursivo": 0.07081031799316406
+    }
+]
