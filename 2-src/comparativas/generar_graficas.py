@@ -85,9 +85,8 @@ for dato in datos_entrega2:
     tiempos_backtracking.append(dato["backtracking"])
 
 
-# =========================================
 # GRAFICA GREEDY VS BACKTRACKING
-# =========================================
+
 
 plt.figure()
 
