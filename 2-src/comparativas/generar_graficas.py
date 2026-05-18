@@ -118,3 +118,78 @@ plt.savefig(
 )
 
 plt.show()
+
+with open(
+    "2-src/comparativas/resultados_final.json",
+    "r"
+) as archivo:
+
+    datos_final = json.load(archivo)
+
+
+tiempos_divide_venceras = []
+
+
+for dato in datos_final:
+
+    tiempos_divide_venceras.append(
+        dato["divide_venceras"]
+    )
+
+
+# =========================================
+# GRAFICA FINAL - TODOS LOS ALGORITMOS
+# =========================================
+
+plt.figure()
+
+plt.plot(
+    materias,
+    tiempos_fuerza_bruta,
+    marker="o",
+    label="Fuerza Bruta"
+)
+
+plt.plot(
+    materias,
+    tiempos_recursivo,
+    marker="o",
+    label="Recursivo"
+)
+
+plt.plot(
+    materias,
+    tiempos_greedy,
+    marker="o",
+    label="Greedy"
+)
+
+plt.plot(
+    materias,
+    tiempos_backtracking,
+    marker="o",
+    label="Backtracking"
+)
+
+plt.plot(
+    materias,
+    tiempos_divide_venceras,
+    marker="o",
+    label="Divide y Venceras"
+)
+
+plt.xlabel("Cantidad de materias")
+
+plt.ylabel("Tiempo de ejecucion (ms)")
+
+plt.title("Comparativa Final de Algoritmos")
+
+plt.legend()
+
+plt.grid(True)
+
+plt.savefig(
+    "4-graficas/comparativa_final.png"
+)
+
+plt.show()
