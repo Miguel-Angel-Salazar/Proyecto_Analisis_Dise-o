@@ -1,0 +1,17 @@
+[
+    {
+        "caso": "Pequeno",
+        "materias": 3,
+        "divide_venceras": 0.012159347534179688
+    },
+    {
+        "caso": "Mediano",
+        "materias": 8,
+        "divide_venceras": 0.018596649169921875
+    },
+    {
+        "caso": "Grande",
+        "materias": 15,
+        "divide_venceras": 0.024318695068359375
+    }
+]
