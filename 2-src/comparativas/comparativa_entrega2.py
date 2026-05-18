@@ -1,4 +1,5 @@
 import time
+import json
 import sys
 import os
 
@@ -20,6 +21,10 @@ casos = [
     ("caso_prueba_mediano.txt", 8, "Mediano"),
     ("caso_prueba_grande.txt", 15, "Grande")
 ]
+
+
+# lista para guardar resultados
+resultados = []
 
 
 print("=" * 75)
@@ -70,7 +75,18 @@ for caso, cantidad, nombre_caso in casos:
     tiempo_backtracking = (fin - inicio) * 1000  # ms
 
     # =====================================
-    # RESULTADOS
+    # GUARDAR RESULTADOS
+    # =====================================
+
+    resultados.append({
+        "caso": nombre_caso,
+        "materias": cantidad,
+        "greedy": tiempo_greedy,
+        "backtracking": tiempo_backtracking
+    })
+
+    # =====================================
+    # MOSTRAR RESULTADOS
     # =====================================
 
     print(f"\nCASO: {nombre_caso}")
@@ -88,3 +104,22 @@ for caso, cantidad, nombre_caso in casos:
         f"{len(asignaciones_backtracking)} asignadas en "
         f"{tiempo_backtracking:.4f} ms"
     )
+
+
+# =====================================
+# GUARDAR JSON
+# =====================================
+
+with open(
+    "2-src/comparativas/resultados_entrega2.json",
+    "w"
+) as archivo:
+
+    json.dump(
+        resultados,
+        archivo,
+        indent=4
+    )
+
+
+print("\nArchivo JSON generado correctamente.")
