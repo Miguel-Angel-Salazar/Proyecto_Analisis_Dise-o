@@ -1,2 +1,6 @@
 # Ignorar el archivo de licencia
 LICENSE
+
+# Entorno virtual y configuración de editor
+.venv/
+.vscode/
