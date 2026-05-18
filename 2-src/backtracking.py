@@ -1,4 +1,3 @@
-
 from lector_datos import cargar_datos
 
 
@@ -17,12 +16,20 @@ def hay_conflicto(asignaciones, profesor, grupo, salon, horario):
 
     return False
 
-def backtracking(materias, salones, horarios, indice, asignaciones):
 
+def backtracking(
+    materias,
+    salones,
+    horarios,
+    indice,
+    asignaciones
+):
+
+    # caso base
     if indice >= len(materias):
         return True
 
-     materia = materias[indice]
+    materia = materias[indice]
 
     for salon in salones:
 
@@ -31,8 +38,10 @@ def backtracking(materias, salones, horarios, indice, asignaciones):
             for horario in horarios:
 
                 conflicto = hay_conflicto(
-                    asignaciones, materia["profesor"],
-                    materia["grupo"], salon["nombre"],
+                    asignaciones,
+                    materia["profesor"],
+                    materia["grupo"],
+                    salon["nombre"],
                     horario
                 )
 
@@ -48,14 +57,16 @@ def backtracking(materias, salones, horarios, indice, asignaciones):
 
                     asignaciones.append(nueva)
 
-                    
+                    # llamada recursiva
                     resultado = backtracking(
-                        materias, salones,
-                        horarios, indice + 1,
+                        materias,
+                        salones,
+                        horarios,
+                        indice + 1,
                         asignaciones
                     )
 
-                    
+                    # si encontró solución válida
                     if resultado:
                         return True
 
@@ -64,7 +75,8 @@ def backtracking(materias, salones, horarios, indice, asignaciones):
 
     return False
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
 
     casos = [
         "caso_prueba_pequeno.txt",
@@ -78,13 +90,17 @@ if _name_ == "_main_":
         print("CASO:", caso)
         print("===================================\n")
 
-        materias, salones, horarios, restricciones, preferencias = cargar_datos(caso)
+        materias, salones, horarios, restricciones, preferencias = cargar_datos(
+            caso
+        )
 
         asignaciones = []
 
         backtracking(
-            materias, salones,
-            horarios, 0,
+            materias,
+            salones,
+            horarios,
+            0,
             asignaciones
         )
 
