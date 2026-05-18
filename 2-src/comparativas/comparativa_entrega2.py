@@ -49,3 +49,39 @@ for caso, cantidad in casos:
     fin = time.time()
 
     tiempo_greedy = fin - inicio
+
+     # =====================================
+    # BACKTRACKING
+    # =====================================
+
+    asignaciones_backtracking = []
+
+    inicio = time.time()
+
+    backtracking(
+        materias,
+        salones,
+        horarios,
+        0,
+        asignaciones_backtracking
+    )
+
+    fin = time.time()
+
+    tiempo_backtracking = fin - inicio
+
+    # =====================================
+    # RESULTADOS
+    # =====================================
+
+    print("\nCantidad de materias:", cantidad)
+
+    print("\nGREEDY")
+    print("Tiempo:", tiempo_greedy)
+    print("Asignaciones:", len(resultado_greedy))
+
+    print("\nBACKTRACKING")
+    print("Tiempo:", tiempo_backtracking)
+    print("Asignaciones:", len(asignaciones_backtracking))
+
+    print("\n------------------------------------")
