@@ -10,26 +10,23 @@ sys.path.append(
 )
 
 from lector_datos import cargar_datos
-
 from fuerza_bruta import fuerza_bruta
 from recursivo import resolver_recursivo
 
 
 casos = [
-    ("caso_prueba_pequeno.txt", 3),
-    ("caso_prueba_mediano.txt", 8),
-    ("caso_prueba_grande.txt", 15)
+    ("caso_prueba_pequeno.txt", 3, "Pequeno"),
+    ("caso_prueba_mediano.txt", 8, "Mediano"),
+    ("caso_prueba_grande.txt", 15, "Grande")
 ]
 
 
-print("\n====================================")
-print("COMPARATIVA ENTREGA 1")
-print("====================================")
+print("=" * 75)
+print("RESULTADOS ENTREGA 1 - FUERZA BRUTA VS RECURSIVIDAD")
+print("=" * 75)
 
 
-for caso, cantidad in casos:
-
-    print("\nCaso:", caso)
+for caso, cantidad, nombre_caso in casos:
 
     materias, salones, horarios, restricciones, preferencias = cargar_datos(
         caso
@@ -49,7 +46,7 @@ for caso, cantidad in casos:
 
     fin = time.time()
 
-    tiempo_fuerza_bruta = fin - inicio
+    tiempo_fuerza_bruta = (fin - inicio) * 1000  # ms
 
     # =====================================
     # RECURSIVO
@@ -69,20 +66,24 @@ for caso, cantidad in casos:
 
     fin = time.time()
 
-    tiempo_recursivo = fin - inicio
+    tiempo_recursivo = (fin - inicio) * 1000  # ms
 
     # =====================================
     # RESULTADOS
     # =====================================
 
-    print("\nCantidad de materias:", cantidad)
+    print(f"\nCASO: {nombre_caso}")
 
-    print("\nFUERZA BRUTA")
-    print("Tiempo:", tiempo_fuerza_bruta)
-    print("Asignaciones:", len(resultado_fuerza_bruta))
+    print(f"   Materias totales: {cantidad}")
 
-    print("\nRECURSIVO")
-    print("Tiempo:", tiempo_recursivo)
-    print("Asignaciones:", len(asignaciones_recursivo))
+    print(
+        f"   Fuerza Bruta:    "
+        f"{len(resultado_fuerza_bruta)} asignadas en "
+        f"{tiempo_fuerza_bruta:.4f} ms"
+    )
 
-    print("\n------------------------------------")
+    print(
+        f"   Recursividad:    "
+        f"{len(asignaciones_recursivo)} asignadas en "
+        f"{tiempo_recursivo:.4f} ms"
+    )
