@@ -2,19 +2,19 @@
     {
         "caso": "Pequeno",
         "materias": 3,
-        "greedy": 0.010251998901367188,
-        "backtracking": 0.0064373016357421875
+        "greedy": 0.011920928955078125,
+        "backtracking": 0.0073909759521484375
     },
     {
         "caso": "Mediano",
         "materias": 8,
-        "greedy": 0.025272369384765625,
-        "backtracking": 0.017404556274414062
+        "greedy": 0.023603439331054688,
+        "backtracking": 0.016689300537109375
     },
     {
         "caso": "Grande",
         "materias": 15,
-        "greedy": 0.08296966552734375,
-        "backtracking": 0.07462501525878906
+        "greedy": 0.08177757263183594,
+        "backtracking": 0.07295608520507812
     }
 ]
