@@ -4,3 +4,5 @@ LICENSE
 # Entorno virtual y configuración de editor
 .venv/
 .vscode/
+__pycache__/
+*.pyc
