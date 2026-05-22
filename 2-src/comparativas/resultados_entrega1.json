@@ -2,19 +2,19 @@
     {
         "caso": "Pequeno",
         "materias": 3,
-        "fuerza_bruta": 0.007152557373046875,
-        "recursivo": 0.0059604644775390625
+        "fuerza_bruta": 0.009298324584960938,
+        "recursivo": 0.0073909759521484375
     },
     {
         "caso": "Mediano",
         "materias": 8,
-        "fuerza_bruta": 0.019550323486328125,
-        "recursivo": 0.018596649169921875
+        "fuerza_bruta": 0.022411346435546875,
+        "recursivo": 0.020265579223632812
     },
     {
         "caso": "Grande",
         "materias": 15,
-        "fuerza_bruta": 0.07843971252441406,
-        "recursivo": 0.07081031799316406
+        "fuerza_bruta": 0.09036064147949219,
+        "recursivo": 0.07367134094238281
     }
 ]
